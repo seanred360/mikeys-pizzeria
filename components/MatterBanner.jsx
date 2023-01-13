@@ -149,18 +149,6 @@ export const MatterBanner = ({ phoneNumber }) => {
     },
   };
 
-  const fadeIn4 = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        type: "easeInOut",
-        duration: 2,
-        delay: 3,
-      },
-    },
-  };
-
   return (
     <div className="matter-canvas relative mt-[90px] p-[16px] border-b-[4px]">
       <motion.h1

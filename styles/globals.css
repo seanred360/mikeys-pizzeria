@@ -113,7 +113,7 @@ p {
 }
 
 .matter-canvas {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
 }
 
 section {
@@ -141,5 +141,9 @@ section {
 
   section {
     margin-bottom: 178px;
+  }
+
+  .matter-canvas {
+    height: calc(100vh - 100px);
   }
 }
