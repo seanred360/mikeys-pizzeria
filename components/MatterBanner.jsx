@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Matter from "matter-js";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 
 const STATIC_DENSITY = 15;
 const PARTICLE_SIZE = 60;

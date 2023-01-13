@@ -64,7 +64,7 @@ const LogoLink = () => {
           <Image src="/images/logo.png" fill alt="logo" />
         </div>
 
-        <span className="font-[900] text-[16px] leading-[25px] md:text-[24px] md:leading-[44px]">
+        <span className="font-[900] text-[26px] leading-[25px] md:text-[26px] md:leading-[44px]">
           Mikey's Pizzeria
         </span>
       </div>
