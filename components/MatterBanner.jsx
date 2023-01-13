@@ -150,7 +150,7 @@ export const MatterBanner = ({ phoneNumber }) => {
   };
 
   return (
-    <div className="matter-canvas relative mt-[90px] p-[16px] border-b-[4px]">
+    <div className="relative h-[80vh] min-h-[400px] mt-[90px] p-[16px] border-b-[4px]">
       <motion.h1
         variants={fadeIn}
         initial="hidden"

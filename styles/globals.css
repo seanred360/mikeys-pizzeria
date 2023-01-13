@@ -142,8 +142,4 @@ section {
   section {
     margin-bottom: 178px;
   }
-
-  .matter-canvas {
-    height: calc(80vh - 100px);
-  }
 }
