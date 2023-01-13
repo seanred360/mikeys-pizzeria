@@ -14,9 +14,12 @@ import {
   useTransform,
 } from "framer-motion";
 import MatterBanner from "../components/MatterBanner";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export default function Home({
   contactInfo,
+  hours,
   about,
   testimonials,
   specialtyPizzas,
@@ -29,6 +32,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Nav contactInfo={contactInfo} about={about} />
       <main className="max-w-[1110px] mx-auto">
         {/* <SectionBanner contactInfo={contactInfo} /> */}
         <MatterBanner phoneNumber={contactInfo.phone} />
@@ -37,6 +41,7 @@ export default function Home({
         <SectionPromo />
         <SectionAbout about={about} />
       </main>
+      <Footer contactInfo={contactInfo} hours={hours} />
     </>
   );
 }
