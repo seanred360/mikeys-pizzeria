@@ -27,35 +27,37 @@ const Nav = ({ contactInfo, about }) => {
 
   return (
     <>
-      <nav className="max-w-[1110px] mx-auto fixed top-0 left-0 right-0 z-[999] backdrop-filter backdrop-blur-lg">
-        <motion.div
-          variants={navVariants}
-          initial="hidden"
-          animate="show"
-          className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
-        >
-          <LogoLink />
-          <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
-            Menu
-          </button>
-        </motion.div>
-
-        <AnimatePresence initial={false} mode="wait">
-          {modalOpen && (
-            <Modal
-              handleClose={closeModal}
-              contactInfo={contactInfo}
-              image={about.image ? urlFor(about.image).url() : null}
-            />
-          )}
-        </AnimatePresence>
-      </nav>
-
       <PhoneButton
         modalOpen={modalOpen}
         openModal={openModal}
         closeModal={closeModal}
       />
+
+      <AnimatePresence initial={false} mode="wait">
+        {modalOpen && (
+          <Modal
+            handleClose={closeModal}
+            contactInfo={contactInfo}
+            image={about.image ? urlFor(about.image).url() : null}
+          />
+        )}
+      </AnimatePresence>
+
+      <div className="fixed top-0 left-0 right-0 w-screen z-[999] backdrop-filter backdrop-blur-lg">
+        <nav className="max-w-[1110px] mx-auto ">
+          <motion.div
+            variants={navVariants}
+            initial="hidden"
+            animate="show"
+            className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
+          >
+            <LogoLink />
+            <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
+              Menu
+            </button>
+          </motion.div>
+        </nav>
+      </div>
     </>
   );
 };
@@ -93,7 +95,7 @@ const Backdrop = ({ children, onClick }) => {
   return (
     <motion.div
       onClick={onClick}
-      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-[#000000e1]"
+      className="z-[999] fixed top-0 left-0 w-full h-full flex justify-center items-center bg-[#000000e1]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -129,7 +131,7 @@ const Modal = ({ handleClose, image, contactInfo }) => {
     <Backdrop onClick={handleClose}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="modal max-w-[700px] flex flex-col justify-center items-center bg-[white] dark:bg-[black] dark:border-[white] dark:border-[2px] rounded-[10px] p-[24px] md:grid md:grid-cols-2"
+        className="z-[999] modal max-w-[700px] flex flex-col justify-center items-center bg-[white] dark:bg-[black] dark:border-[white] dark:border-[2px] rounded-[10px] p-[24px] md:grid md:grid-cols-2"
         variants={dropIn}
         initial="hidden"
         animate="visible"
