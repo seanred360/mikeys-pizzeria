@@ -26,7 +26,7 @@ const Nav = ({ contactInfo, about }) => {
   };
 
   return (
-    <nav className="max-w-[1110px] mx-auto fixed top-0 left-0 right-0 z-[999] bg-[white] dark:bg-[black]">
+    <nav className="max-w-[1110px] mx-auto fixed top-0 left-0 right-0 z-[999] backdrop-filter backdrop-blur-lg">
       <motion.div
         variants={navVariants}
         initial="hidden"
