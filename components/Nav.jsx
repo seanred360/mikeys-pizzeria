@@ -26,33 +26,37 @@ const Nav = ({ contactInfo, about }) => {
   };
 
   return (
-    <nav className="max-w-[1110px] mx-auto fixed top-0 left-0 right-0 z-[999] backdrop-filter backdrop-blur-lg">
-      <motion.div
-        variants={navVariants}
-        initial="hidden"
-        animate="show"
-        className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
-      >
-        <LogoLink />
-        <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
-          Menu
-        </button>
-      </motion.div>
+    <>
+      <nav className="max-w-[1110px] mx-auto fixed top-0 left-0 right-0 z-[999] backdrop-filter backdrop-blur-lg">
+        <motion.div
+          variants={navVariants}
+          initial="hidden"
+          animate="show"
+          className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
+        >
+          <LogoLink />
+          <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
+            Menu
+          </button>
+        </motion.div>
+
+        <AnimatePresence initial={false} mode="wait">
+          {modalOpen && (
+            <Modal
+              handleClose={closeModal}
+              contactInfo={contactInfo}
+              image={about.image ? urlFor(about.image).url() : null}
+            />
+          )}
+        </AnimatePresence>
+      </nav>
+
       <PhoneButton
         modalOpen={modalOpen}
         openModal={openModal}
         closeModal={closeModal}
       />
-      <AnimatePresence initial={false} mode="wait">
-        {modalOpen && (
-          <Modal
-            handleClose={closeModal}
-            contactInfo={contactInfo}
-            image={about.image ? urlFor(about.image).url() : null}
-          />
-        )}
-      </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
