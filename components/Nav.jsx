@@ -34,7 +34,7 @@ const Nav = ({ contactInfo, about }) => {
         className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
       >
         <LogoLink />
-        <button className="px-[14px] py-[8px] bg-[red] rounded-full font-[900] text-[white]">
+        <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
           Menu
         </button>
       </motion.div>
