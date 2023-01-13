@@ -144,6 +144,6 @@ section {
   }
 
   .matter-canvas {
-    height: calc(100vh - 100px);
+    height: calc(80vh - 100px);
   }
 }
