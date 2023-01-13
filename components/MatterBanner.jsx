@@ -111,7 +111,7 @@ export const MatterBanner = ({ phoneNumber }) => {
         })
       );
     }
-  }, [someStateValue]);
+  }, [someStateValue, constraints, scene]);
 
   const fadeIn = {
     hidden: { opacity: 0 },

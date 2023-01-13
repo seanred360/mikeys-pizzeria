@@ -345,7 +345,7 @@ const SpecialtyPizza = ({ pizza, order }) => {
     if (isInView) {
       controls.start("show");
     }
-  }, [isInView]);
+  }, [isInView, controls]);
 
   const item = {
     hidden: {
