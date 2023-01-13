@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --font-color: black;
+  --background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-color: white;
+    --background-color: black;
+  }
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url("./fonts/domaine-display-black.woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url("./fonts/domaine-display-bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url("./fonts/domaine-display-regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Domaine Display", serif;
+  /* font-family: "Montserrat", sans-serif; */
+}
+
+body {
+  /* color: var(--font-color);
+  background: var(--background-color); */
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin: 32px 0;
+  margin-right: 92px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--background-color);
+  line-height: 42px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: var(--font-color);
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, #e8295c 11.37%, #e75e34 86.78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.modal {
+  width: clamp(50%, 700px, 90%);
+  /* height: min(50%, 300px); */
+}
+
+.matter-canvas {
+  height: calc(100vh - 100px);
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+@media screen and (min-width: 992px) {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 89px 0;
+    font-size: 55px;
+    line-height: 89px;
+  }
+
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    height: 89px;
+  }
+
+  section {
+    margin-bottom: 178px;
+  }
+}
