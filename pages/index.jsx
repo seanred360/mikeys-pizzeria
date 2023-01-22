@@ -174,8 +174,11 @@ const SectionPizza = ({ pizzas }) => {
         ))}
       </motion.div>
       <div className="flex justify-center pointer">
-        <Link href="/menu">
-          <p className="flex items-center px-[32px] py-[12px] uppercase text-[26px] leading-[42px] font-[900] rounded-[50px] bg-[red] text-[white]">
+        <Link
+          href="https://scontent.fykz1-2.fna.fbcdn.net/v/t39.30808-6/284609747_1173930026756175_1179376621622275119_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c4c01c&_nc_ohc=_oeYSEFqP8QAX8Md4W9&_nc_ht=scontent.fykz1-2.fna&oh=00_AfDkRKTCPe1K0J_cKvAzcyMXUU8CmIwjjkgnBF8NSCM-cQ&oe=63D2D6E8"
+          target="_blank"
+        >
+          <p className="flex items-center px-[32px] py-[12px] uppercase text-[26px] leading-[42px] font-[900] rounded-[50px] bg-[red] text-[white] hover:opacity-75">
             <Icon icon="material-symbols:menu-book" width="30" />
             <span className="pl-[8px]">See Menu</span>
           </p>
@@ -411,43 +414,45 @@ const SpecialtyPizza = ({ pizza, order }) => {
 
 const Testimonial = ({ testimonial, variant }) => {
   return (
-    <motion.div
-      transition={{
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      }}
-      variants={variant}
-      whileInView="show"
-      viewport={{ once: true }}
-      className="flex flex-col flex-[25%] mb-[14px] px-[24px] rounded-[10px] border-[1px] border-[black] dark:border-[white]"
-    >
-      <div className="flex justify-center my-[24px]">
-        <Icon icon="ic:round-star-border" width={30} />
-        <Icon icon="ic:round-star-border" width={30} />
-        <Icon icon="ic:round-star-border" width={30} />
-        <Icon icon="ic:round-star-border" width={30} />
-        <Icon icon="ic:round-star-border" width={30} />
-      </div>
-      <p>{testimonial.comment}</p>
-      <div className="flex items-center my-[24px]">
-        <div className="relative w-[75px] h-[75px] rounded-full overflow-hidden bg-[white]">
-          <Image
-            src={
-              testimonial.image
-                ? urlFor(testimonial.image).width(75).url()
-                : `https://avatars.dicebear.com/api/avataaars/${Date.now()}.svg`
-            }
-            width={75}
-            height={75}
-            alt="testimonial"
-          />
+    <Link href={testimonial.url} target="_blank">
+      <motion.div
+        transition={{
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8,
+        }}
+        variants={variant}
+        whileInView="show"
+        viewport={{ once: true }}
+        className="flex flex-col flex-[25%] mb-[14px] px-[24px] rounded-[10px] border-[1px] border-[black] dark:border-[white] cursor-pointer dark:hover:bg-[black]/80 hover:bg-[black]/10"
+      >
+        <div className="flex justify-center my-[24px]">
+          <Icon icon="ic:round-star-border" width={30} />
+          <Icon icon="ic:round-star-border" width={30} />
+          <Icon icon="ic:round-star-border" width={30} />
+          <Icon icon="ic:round-star-border" width={30} />
+          <Icon icon="ic:round-star-border" width={30} />
         </div>
-        <p className="ml-[14px] font-[700] text-[20px]">
-          {testimonial.customerName}
-        </p>
-      </div>
-    </motion.div>
+        <p>{testimonial.comment}</p>
+        <div className="flex items-center my-[24px]">
+          <div className="relative w-[75px] h-[75px] rounded-full overflow-hidden bg-[white]">
+            <Image
+              src={
+                testimonial.image
+                  ? urlFor(testimonial.image).width(75).url()
+                  : `https://avatars.dicebear.com/api/avataaars/${Date.now()}.svg`
+              }
+              width={75}
+              height={75}
+              alt="testimonial"
+            />
+          </div>
+          <p className="ml-[14px] font-[700] text-[20px]">
+            {testimonial.customerName}
+          </p>
+        </div>
+      </motion.div>
+    </Link>
   );
 };
 

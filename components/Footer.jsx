@@ -14,9 +14,11 @@ const Footer = ({ contactInfo, hours }) => {
             <li>{contactInfo.addressLine2}</li>
             <li className="flex items-center">
               <Icon icon="ph:phone-fill" />
-              <span className="ml-[8px] text-[red] font-[900]">
-                {contactInfo.phone}
-              </span>
+              <Link href={`tel:${contactInfo.phone}`}>
+                <span className="ml-[8px] text-[red] font-[900]">
+                  {contactInfo.phone}
+                </span>
+              </Link>
             </li>
             <li className="flex items-center">
               <Icon icon="ic:round-email" />{" "}

@@ -38,7 +38,7 @@ const Nav = ({ contactInfo, about }) => {
           <Modal
             handleClose={closeModal}
             contactInfo={contactInfo}
-            image={about.image ? urlFor(about.image).url() : null}
+            image={about.image ? urlFor(about.image).width(500).url() : null}
           />
         )}
       </AnimatePresence>
@@ -52,9 +52,14 @@ const Nav = ({ contactInfo, about }) => {
             className="nav relative max-w-[1110px] h-[90px] md:h-[90px] flex justify-between items-center mx-auto border-b-[2px] px-[16px] md:px-[24px] py-[9.889px] md-py[14.833px]"
           >
             <LogoLink />
-            <button className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px]">
-              Menu
-            </button>
+            <Link
+              href="https://scontent.fykz1-2.fna.fbcdn.net/v/t39.30808-6/284609747_1173930026756175_1179376621622275119_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c4c01c&_nc_ohc=_oeYSEFqP8QAX8Md4W9&_nc_ht=scontent.fykz1-2.fna&oh=00_AfDkRKTCPe1K0J_cKvAzcyMXUU8CmIwjjkgnBF8NSCM-cQ&oe=63D2D6E8"
+              target="_blank"
+            >
+              <span className="px-[14px] py-[8px] bg-[transparent] rounded-full font-[900] border-[1px] hover:bg-[red]">
+                Menu
+              </span>
+            </Link>
           </motion.div>
         </nav>
       </div>
@@ -83,7 +88,7 @@ const PhoneButton = ({ modalOpen, openModal, closeModal }) => {
     <div className="fixed bottom-0 right-0">
       <button
         onClick={() => (modalOpen ? closeModal() : openModal())}
-        className="rounded-full border-[#00B232] bg-[white] dark:bg-[black] text-[#00B232] border-[2px] m-[8px] p-[8px]"
+        className="rounded-full border-[#00B232] bg-[white] dark:bg-[black] text-[#00B232] border-[2px] m-[8px] p-[8px] hover:bg-[green]"
       >
         <Icon icon="ph:phone-fill" height="40" />
       </button>
@@ -137,8 +142,8 @@ const Modal = ({ handleClose, image, contactInfo }) => {
         animate="visible"
         exit="exit"
       >
-        <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden border-[10px object-cover">
-          <Image src="/images/phone-guy.jpg" fill alt="Mike" />
+        <div className="relative flex justify-center items-center w-[250px] h-[250px] rounded-full overflow-hidden border-[10px] bg-[white] object-cover">
+          <Image src={image} width="250" height="250" alt="Mike" />
         </div>
 
         <div className="text-left">
