@@ -175,7 +175,7 @@ const SectionPizza = ({ pizzas }) => {
       </motion.div>
       <div className="flex justify-center pointer">
         <Link
-          href="https://scontent.fykz1-2.fna.fbcdn.net/v/t39.30808-6/284609747_1173930026756175_1179376621622275119_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c4c01c&_nc_ohc=_oeYSEFqP8QAX8Md4W9&_nc_ht=scontent.fykz1-2.fna&oh=00_AfDkRKTCPe1K0J_cKvAzcyMXUU8CmIwjjkgnBF8NSCM-cQ&oe=63D2D6E8"
+          href="https://www.facebook.com/mikeyspizzeriast.thomas/photos/p.1173930033422841/1173930033422841"
           target="_blank"
         >
           <p className="flex items-center px-[32px] py-[12px] uppercase text-[26px] leading-[42px] font-[900] rounded-[50px] bg-[red] text-[white] hover:opacity-75">
